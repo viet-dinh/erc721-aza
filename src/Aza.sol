@@ -19,4 +19,9 @@ contract Contract is ERC721Drop {
             _primarySaleRecipient
         )
     {}
+
+    function mint(address _to, uint256 _amount) external {
+        require(_amount > 0, "At least 1 token when minting");
+        _safeMint(_to, _amount);
+    }
 }
